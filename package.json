@@ -1,0 +1,17 @@
+{
+  "name": "simple-frontend-cloudflare",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple frontend demo deployed on Cloudflare Pages.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx http-server . -p 4173 -c-1",
+    "test": "echo \"No tests configured\""
+  },
+  "keywords": [
+    "frontend",
+    "cloudflare-pages"
+  ],
+  "author": "",
+  "license": "MIT"
+}
