@@ -1,20 +1,59 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Frontend on Cloudflare</title>
+  <title>Mock Google Home</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <main class="card">
-    <p class="badge">Cloudflare Pages Demo</p>
-    <h1>Simple Frontend Project</h1>
-    <p class="subtitle">
-      This site is published from GitHub and deployed to Cloudflare.
-    </p>
-    <button id="hello-btn" type="button">Click Me</button>
-    <p id="message" class="message" aria-live="polite"></p>
+  <header class="top-nav">
+    <a href="#" aria-label="Gmail">Gmail</a>
+    <a href="#" aria-label="Images">Images</a>
+    <button type="button" class="nav-apps" aria-label="Google apps">◻︎◻︎◻︎</button>
+    <button type="button" class="nav-avatar" aria-label="Profile">U</button>
+  </header>
+
+  <main class="google-shell">
+    <h1 class="google-logo" aria-label="Google">
+      <span class="blue">G</span><span class="red">o</span><span class="yellow">o</span><span class="blue">g</span><span class="green">l</span><span class="red">e</span>
+    </h1>
+
+    <form id="search-form" class="search-area" autocomplete="off">
+      <div class="search-box">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input
+          id="search-input"
+          type="text"
+          name="q"
+          placeholder="Search Google or type a URL"
+          aria-label="Search input"
+        />
+        <button id="clear-btn" class="clear-btn" type="button" aria-label="Clear input">✕</button>
+      </div>
+
+      <div id="suggestions" class="suggestions" hidden></div>
+
+      <div class="actions">
+        <button id="search-btn" type="submit" class="action-btn">Google Search</button>
+        <button id="lucky-btn" type="button" class="action-btn">I'm Feeling Lucky</button>
+      </div>
+    </form>
+
+    <section class="quick-search" aria-label="Quick search terms">
+      <p>快速搜索</p>
+      <div class="chips">
+        <button type="button" class="chip">Cloudflare Pages</button>
+        <button type="button" class="chip">JavaScript tutorial</button>
+        <button type="button" class="chip">Frontend interview</button>
+        <button type="button" class="chip">GitHub Actions</button>
+      </div>
+    </section>
+
+    <section id="results" class="results" hidden>
+      <h2>模拟搜索结果</h2>
+      <div id="results-list" class="results-list"></div>
+    </section>
   </main>
 
   <script src="./script.js"></script>
